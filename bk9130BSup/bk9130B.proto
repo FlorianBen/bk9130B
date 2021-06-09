@@ -1,0 +1,191 @@
+Terminator = CR LF;
+
+getIDN {
+    out "*IDN?";
+    in "%\$1[^\n]";
+    ExtraInput = Ignore;
+}
+
+cmd {
+    out "\$1";
+}
+
+setD {
+    out "\$1 %d";
+}
+
+getD {
+    out "\$1?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+# Generic
+
+getWF {
+    out "\$2";
+    in "%\$1[^\r\n]";
+}
+
+#  SYSTem subsystem commands
+## BEEPer
+getSYSTemBEEPerState {
+    out "SYSTem:BEEPer:STATe?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+## Error
+getSYSTemErrorNext {
+    out "SYSTem:ERRor:NEXT?";
+    in "%d,%s";
+    ExtraInput = Ignore;
+}
+
+## VERSion
+getSYSTemVersion {
+    out "SYSTem:VERSion?";
+    in "%s";
+    ExtraInput = Ignore;
+}
+
+## Date
+getSYSTemDATE {
+    out "SYSTem:DATE?";
+    in "%s";
+    ExtraInput = Ignore;
+}
+
+## Time
+getSYSTemTIME {
+    out "SYSTem:TIME?";
+    in "%s";
+    ExtraInput = Ignore;
+}
+
+## LFR
+getSYSTemLFRenquency {
+    out "SYSTem:LFRenquency?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+## SENSor
+getSYSTemSENSorIDN {
+    out "SYSTem:SENSor:IDN?";
+    in "%s";
+    ExtraInput = Ignore;
+}
+
+# STATus subsystem commands
+
+# DISPlay
+setDISPlayBRIGhtness {
+    out "DISPlay:BRIGhtness %f";
+}
+
+getDISPlayBRIGhtness {
+    out "DISPlay:BRIGhtness?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+
+setDISPlayCONTrast {
+    out "DISPlay:CONTrast %f";
+}
+
+getDISPlayCONTrast {
+    out "DISPlay:CONTrast?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+
+# SENSe
+## AVERage
+setSENSeAVERage {
+    out "SENSe:AVERage %d";
+}
+
+getSENSeAVERage {
+    out "SENSe:AVERage?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+## CORRection
+setSENSeCORRection {
+    out "SENSe:CORRection:LOSS:INPut:MAGNitude %f";
+}
+
+getSENSeCORRection {
+    out "SENSe:CORRection:LOSS:INPut:MAGNitude?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+
+setSENSeCORRectionCOLLectZERo {
+    out "SENSe:CORRection:COLLect:ZERo";
+}
+
+getSENSeCORRectionCOLLectZERo {
+    out "SENSe:CORRection:COLLect:ZERo:MAGNitude?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+
+setSENSeCORRectionWAVelength {
+    out "SENSe:CORRection:WAVelength %f";
+}
+
+getSENSeCORRectionWAVelength {
+    out "SENSe:CORRection:WAVelength?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+
+#  Measurement commands
+MEASurePOWer {
+    out "MEASure:POWer?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+MEASureCURRent {
+    out "MEASure:CURRent?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+MEASureVOLTage {
+    out "MEASure:VOLTage?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+MEASureENERgy {
+    out "MEASure:ENERgy?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+MEASureFREQuency {
+    out "MEASure:FREQuency?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+MEASurePDENsity {
+    out "MEASure:PDENsity?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+MEASureEDENsity {
+    out "MEASure:EDENsity?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+MEASureRESistance {
+    out "MEASure:RESistance?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+MEASureTEMPerature {
+    out "MEASure:TEMPerature?";
+    in "%f";
+    ExtraInput = Ignore;
+}
